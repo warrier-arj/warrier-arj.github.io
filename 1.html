@@ -31,30 +31,46 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Sensor Analysis and SLAM</h1>
-							<span class="image fit"><img src="images/5_1.jpg" alt="" /></span>
-							<h2>Project Overview</h2>
-							<p>In this multifaceted project revolving around computer vision and perception for self-driving cars, I extensively engaged with deep learning techniques to develop several prototype solutions essential for autonomous vehicle operations. Here is a detailed summary of the various sub-projects I have successfully completed:</p>
+							<span class="image fit"><img src="images/1_0.jpg" alt="" /></span>
+							<h2>Overview</h2>
+							<p>
+								
+							</p>
 
 							<!-- Sub-projects -->
 							<h2>Sub-projects</h2>
 							<ol>
 								<li>
-									<h4>Road Segmentation</h4>
-									<p>Utilized fully convolutional networks and experimented with different up-sampling methods including transposed convolutions to create a model capable of road segmentation. The model utilized the backbone network VGG-net, demonstrating promising results on a baseline dataset.</p>
+
+									<h4>Global Positioning System (GPS) Error Analysis&nbsp;<a href="https://github.com/warrier-arj/Sensor-Analysis/tree/main/GPS%20Puck%20Error%20Analysis" class="button primary small" ><span class="label">Code and Report</span></a></h4>
+									<p>A driver was coded to parse the output from the GPS puck and convert it into meaningful messages, which were then labeled and stored in ROSbags for later replay. These ROSbags were subsequently converted into CSV files for analysis with Python and Matlab scripts. The focus of this experiment was placed on evaluating the validity of GPS entries in urban and vegetation-blocked areas, as well as examining the lack of reliability of GPS values in the absence of certain filters or corrective elements.
+									</p>
+									<span class="image fit"><img src="images/1_1.jpg" alt="" /></span>
 								</li>
 								<li>
-									<h4>2D Object Detection</h4>
-									<p>Incorporated the YOLO algorithm in a deep learning network to achieve 2D object detection, with special attention to various traffic scenarios. The project involved working with anchor boxes, intersection over union (IoU), and bounding box predictions to identify and locate objects in a given cell using different stages of the YOLO algorithm.</li>
+									<h4>Real Time Kinematic (RTK) positioning&nbsp;<a href="https://github.com/warrier-arj/Sensor-Analysis/tree/main/RTK%20GPS%20Analysis" class="button primary small" ><span class="label">Code and Report</span></a>
+									</h4>
+									<p>We utilize two previously analyzed GPS pucks along with Arduisimple- (simpleRTK2B) boards and (Telemetry radio V3) modules to implement RTK positioning based GPS.  Stationary and moving GPS data were collected, and the accuracy and reliability of the results were compared. In the open space, centimeter-level accuracy was achieved, significantly improving upon previous results by utilizing RTK corrections. However, in the occluded environment with obstructions like trees and people, some deviations were observed due to multipathing effects. Nevertheless, sub-meter accuracy was still demonstrated by the data, highlighting the effectiveness of RTK GPS in overcoming environmental challenges. These findings underscore the importance of site selection for optimal GPS data quality and emphasize the superiority of RTK GPS over standard GPS equipment in achieving highly precise positional data.</p>
+									<span class="image fit"><img src="images/1_2.jpg" alt="" /></span>
 								<li>
-									<h4>Multi-Task Learning</h4>
-									<p>Developed a multi-task learning solution targeting depth estimation and semantic segmentation. In this phase, I delved into constant depth features and object segmentation within street view images using the cityscapes dataset. This involved the innovative use of an M10 attention network, which showcased the utility of merge filters and attention modules in object recognition and location prediction.</li>
+									<h4>Allan Variance analysis of Inertial Measurement Units (IMU)s&nbsp;<a href="https://github.com/warrier-arj/Sensor-Analysis/tree/main/Allan%20Variance%20Analysis" class="button primary small" ><span class="label">Code and Report</span></a></h4>
+									<p>Two datasets of 5 minutes and 5 hours were collected using an inertial measurement unit (IMU). Allan variance and deviation analysis were conducted on the collected datasets, and noise parameters were calculated. The time series and frequency plots of the data were also generated and analyzed. The Allan variance method was employed to represent the root mean square random drift error as a function of average time, providing insights into the underlying random processes contributing to data noise. The datasets were collected using a VN-100 IMU unit, and a ROS driver was used for data acquisition. The analysis revealed noise parameters slightly higher than those specified in the datasheet, and the errors in the sensor measurements were found to have Gaussian distributions. Various noise factors affecting the IMU data were explored, and recommendations for improving data quality, such as periodic calibrations and stable placement, were discussed.
+									</p>
+									
 								<li>
-									<h4>3D Object Detection</h4>
-									<p>Built a 3D object detection system utilizing deep learning techniques trained on the Lyft dataset from the 3D object detection challenge. The system leveraged feature pyramid networks and various loss functions, including focal and L1 losses, to facilitate the detection of cars, cyclists, and pedestrians in a 3D scene.</li>
-								<li>
-									<h4>Bird’s Eye View Visualization</h4>
-									<p>Implemented an advanced system for generating a bird's eye view of the environment through computer vision techniques. The project utilized the UNIT Access T technique, incorporating homography and inverse homography procedures to transform and refine images for a comprehensive aerial view. This involved learning homography matrix parameters with spatial transformers and applying them in a convolution network, emphasizing linear interpolation and matrix multiplications.</li>
-							</ol>
+									<h4>Dead Reckoning with IMUs and GPS data&nbsp;<a href="https://github.com/warrier-arj/Sensor-Analysis/tree/main/SLAM-VSLAM/src/analysis" class="button primary small" ><span class="label">Code and Report</span></a></h4>
+									<p>Datasets were collected from a moving vehicle using an inertial measurement unit (IMU) and a Global Positioning System (GPS) puck. The data was used to calibrate magnetometer readings, derive forward velocity plots, and generate a dead reckoning of the vehicle's path based on the IMU data. The magnetometer calibration addressed hard and soft iron errors by shifting and transforming the data. Linear accelerations were integrated to obtain velocity, and angular velocities were integrated to calculate angles. A complementary filter was employed to fuse gyroscope and magnetometer data for improved yaw accuracy. Forward velocities were determined by integrating acceleration, and bias removal techniques were applied. Dead reckoning was used to estimate the vehicle's trajectory and compared to GPS data, revealing accumulated errors in the IMU-based path estimation. The findings suggest that while IMU data can provide useful insights, challenges related to biases and noise must be carefully addressed to improve accuracy in dead reckoning applications.
+									</p>
+									<span class="image fit"><img src="images/1_3.jpg" alt="" /></span>
+									<li>
+										<h4>VSLAM and SLAM comparison with Road Sign Mapping added&nbsp;<a href="https://github.com/warrier-arj/Sensor-Analysis/tree/main/Dead%20Reckoning%20(Sensor%20Fusion%20and%20comparison%20with%20GPS)" class="button primary small" ><span class="label">Code and Report</span></a></h4>
+										<p>
+											
+										</p>
+										<span class="image fit"><img src="images/1_5.jpg" alt="" /></span>
+									</li>
+								
+								</ol>
 
 							<!-- Add more sub-project descriptions in a similar manner -->
 
